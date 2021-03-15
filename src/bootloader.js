@@ -1,7 +1,7 @@
-class Bootloader extends Phaser.Scene{
+export class Bootloader extends Phaser.Scene{
     constructor(){
         /* Call constructor parent */
-        super("Bootloader");
+        super( { key: "bootloader" } );
     }
     preload(){
         console.log("preload BOOTLOADER");
@@ -12,9 +12,7 @@ class Bootloader extends Phaser.Scene{
         this.load.image("tablero", "./assets/tablero.png");
 
         this.load.on("complete", () =>{
-            this.scene.start("Play");
+            this.scene.start("play");
         });
     }
 }
-
-export default Bootloader;

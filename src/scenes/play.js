@@ -1,8 +1,8 @@
 import Snake from '../gameobjects/snake.js';
 
-class Play extends Phaser.Scene {
+export class Play extends Phaser.Scene {
     constructor() {
-        super('Play');
+        super( { key: 'play' } );
     }
     preload() {
         console.log('Escena play');
@@ -34,5 +34,3 @@ class Play extends Phaser.Scene {
         this.snake.update(time);
     }
 }
-
-export default Play;

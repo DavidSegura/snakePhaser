@@ -1,7 +1,7 @@
-class Gameover extends Phaser.Scene{
+export class Gameover extends Phaser.Scene{
     constructor(){
         /* Call constructor parent */
-        super("Gameover");
+        super( { key: "gameover" } );
     }
     init(){
         console.log("init Gameover");
@@ -10,5 +10,3 @@ class Gameover extends Phaser.Scene{
         console.log("preload Gameover");
     }
 }
-
-export default Gameover;

@@ -1,7 +1,7 @@
-class Menu extends Phaser.Scene{
+export class Menu extends Phaser.Scene{
     constructor(){
         /* Call constructor parent */
-        super("Menu");
+        super( { key: "menu" } );
     }
     init(){
         console.log("init Menu");
@@ -10,5 +10,3 @@ class Menu extends Phaser.Scene{
         console.log("preload Menu");
     }
 }
-
-export default Menu;

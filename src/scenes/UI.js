@@ -1,7 +1,7 @@
-class UI extends Phaser.Scene{
+export class UI extends Phaser.Scene{
     constructor(){
         /* Call constructor parent */
-        super("UI");
+        super( { key: "ui" } );
     }
     init(){
         console.log("init UI");
@@ -10,5 +10,3 @@ class UI extends Phaser.Scene{
         console.log("preload UI");
     }
 }
-
-export default UI;
