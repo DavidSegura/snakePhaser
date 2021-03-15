@@ -12,13 +12,30 @@ export class Play extends Phaser.Scene {
 
     create() {
         console.log("create Play");
-        this.cursors = this.input.keyboard.createCursorKeys();
+        //this.cursors = this.input.keyboard.createCursorKeys();
+
+        this.input.keyboard.on('keydown-RIGHT', () => {
+            this.snake.changeMov('derecha');
+        });
+
+        this.input.keyboard.on('keydown-LEFT', () => {
+            this.snake.changeMov('izquierda');
+        });
+
+        this.input.keyboard.on('keydown-UP', () => {
+            this.snake.changeMov('arriba');
+        });
+
+        this.input.keyboard.on('keydown-DOWN', () => {
+            this.snake.changeMov('abajo');
+        });
     }
 
     update(time) {
         this.snake.update(time);
 
-        if(this.cursors.left.isDown){
+        /* Optional controler cursors */
+        /*if(this.cursors.left.isDown){
             this.snake.changeMov('izquierda');
         }
 
@@ -32,6 +49,6 @@ export class Play extends Phaser.Scene {
 
         if(this.cursors.down.isDown){
             this.snake.changeMov('abajo');
-        }
+        }*/
     }
 }

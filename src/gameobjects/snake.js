@@ -25,6 +25,7 @@ class Snake{
                     break;
             }
 
+            /* Insert retard 150ms to change direction */
             this.timmer = time + 150;
         }
     }
