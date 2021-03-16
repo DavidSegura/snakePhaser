@@ -1,4 +1,5 @@
 import Snake from '../gameobjects/snake.js';
+import { Food } from "../gameobjects/food.js";
 
 export class Play extends Phaser.Scene {
     constructor() {
@@ -8,6 +9,7 @@ export class Play extends Phaser.Scene {
     preload() {
         console.log('Escena play');
         this.snake = new Snake(this);
+        this.food = new Food(this);
     }
 
     create() {
@@ -28,6 +30,12 @@ export class Play extends Phaser.Scene {
 
         this.input.keyboard.on('keydown-DOWN', () => {
             this.snake.changeMov('abajo');
+        });
+
+        /* Collision Header Snake to Food */
+        this.physics.add.collider(this.snake.body[0], this.food.food, () => {
+            this.food.addfood();
+            this.snake.bodyAddSection();
         });
     }
 
