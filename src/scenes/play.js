@@ -13,7 +13,9 @@ export class Play extends Phaser.Scene {
     }
 
     create() {
-        console.log("create Play");
+        this.scene.launch("ui");
+        const sceneUI = this.scene.get("ui");
+
         //this.cursors = this.input.keyboard.createCursorKeys();
 
         this.input.keyboard.on('keydown-RIGHT', () => {
@@ -36,6 +38,7 @@ export class Play extends Phaser.Scene {
         this.physics.add.collider(this.snake.body[0], this.food.food, () => {
             this.food.addfood();
             this.snake.bodyAddSection();
+            sceneUI.addPoint();
         });
     }
 
